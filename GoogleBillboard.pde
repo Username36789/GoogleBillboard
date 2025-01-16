@@ -9,7 +9,7 @@ public void setup()
     // get 10 consecutive digits by substring
     String tenDigits = digitsOfE.substring(i, i + 10);
 
-    //conversion from string to double
+    // conversion from string to double
     double number = Double.parseDouble(tenDigits);
     
     if (isPrime(number)) {
@@ -32,8 +32,11 @@ public boolean isPrime(double dNum)
   // convert the double to an integer with long
   long number = (long) dNum;
 
+  // all cases below 5
   if (number < 2) return false;
   if (number == 2 || number == 3) return true;
+
+  // factors of 2 or 3 means not prime
   if (number % 2 == 0 || number % 3 == 0) return false;
 
   // check for factors from 5 to sqrt(number)
